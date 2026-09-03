@@ -1,0 +1,16 @@
+{
+  "name": "first-step",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "app.ts",
+  "scripts": {
+    "start": "node app.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "prisma": "^7.10.0"
+  }
+}
