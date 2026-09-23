@@ -9,6 +9,17 @@ const getAll = async (req, res) => {
 		return res.status(500).json(salle);
 	}
 };
+
+//read one 
+const getById = async (req, res) => {
+	try {
+		const salle = await salleService.getById(Number(req.params.id));
+		res.status(200).json(salle);
+	} catch (error) {
+		return res.status(500).json(salle);
+	}
+};
+
 //create
 const create = async (req, res) => {
 	try {
@@ -40,4 +51,4 @@ const deleteOne = async (req,res) => {
 }
 
 
-export default {getAll, create, deleteOne, updateOne};
+export default {getAll, getById, create, deleteOne, updateOne};
