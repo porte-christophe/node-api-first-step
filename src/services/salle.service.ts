@@ -23,7 +23,10 @@ const create = async (newsalle:Salle) => {
 //read one
 const getById = async (id:number) => {
 	const salle = await salleRepository.findOneById(id);
-	return salle
+	if (!salle) {
+		throw new Error("Salle not found");
+	}
+	return salle;
 }
 
 //delete one

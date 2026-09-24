@@ -17,3 +17,20 @@ model Salle {
   name  String
   capacity Int
 }
+
+model Role {
+  id    Int     @id @default(autoincrement())
+  libelle   String
+  users User[]
+}
+
+
+model User {
+  id    Int     @id @default(autoincrement())
+  role   Role   @relation(fields: [roleId], references: [id], onDelete: Cascade, onUpdate: Cascade) 
+  roleId Int
+  nom   String
+  prenom   String
+  email    String
+  password  String
+}
