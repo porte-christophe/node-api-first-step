@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import Express from "express";
 import salleRouter from "./src/routers/salle.router.ts";
+import roleRouter from "./src/routers/role.router.ts";
 import cors from "cors";
 
 
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(cors({
   origin: "http://localhost:5173",
 }));
-app.use("/", salleRouter);
+app.use("/", salleRouter, roleRouter);
 
 
 
